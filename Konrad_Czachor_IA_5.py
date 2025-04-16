@@ -1,0 +1,31 @@
+def main():
+    average_rainfall()
+
+def average_rainfall():
+    name_of_month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] #Create list to store month names
+    years = int(input("Enter the number of years: ")) #Ask the user to enter number of years
+
+    total_rainfall = 0
+    total_months = years * 12
+
+    #Loop through the years the user provided
+    for year in range(1, years + 1):
+        print(f"For year {year}:")
+
+        #Loop through each month from the list
+        for month in name_of_month:
+            #Ask user to enter how much rain fell for the month
+            rainfall = float(input(f"Enter the rainfall amount in inches for {month}: "))
+
+            #Add rainfall to the total_rainfall variable
+            total_rainfall += rainfall
+
+    #Calculate average monthly rainfall
+    average_rainfall = total_rainfall / total_months
+
+    print(f"\nFor {total_months} months:")
+    print(f"Total rainfall: {total_rainfall:.2f} inches")
+    print(f"Average monthly rainfall: {average_rainfall:.2f} inches")
+
+#Call main function to run the program
+main()
